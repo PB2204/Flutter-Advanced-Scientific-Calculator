@@ -1,6 +1,6 @@
 # Calculator
 
-![Calculator Banner](ScreenShots/banner.png)
+![Calculator Banner](Screenshots/banner.png)
 
 ## About the Calculator App by Pabitra Banerjee
 
@@ -150,10 +150,10 @@ By following these steps, you can start using the Calculator app to handle all y
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="ScreenShots/image2.png" width="24%" />
-  <img src="ScreenShots/image3.png" width="24%" />
-  <img src="ScreenShots/image4.png" width="24%" />
-  <img src="ScreenShots/image5.png" width="24%" />
+  <img src="Screenshots/image2.png" width="24%" />
+  <img src="Screenshots/image3.png" width="24%" />
+  <img src="Screenshots/image4.png" width="24%" />
+  <img src="Screenshots/image5.png" width="24%" />
 </div>
 
 ## Contributing
