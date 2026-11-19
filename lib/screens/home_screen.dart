@@ -129,12 +129,36 @@ class HomeScreen extends StatelessWidget {
                             onPressed: _onExpand,
                             isSelected: isLandscape,
                           ),
-                          const Spacer(),
-                          Consumer<Calculations>(
-                            builder: (context, calc, child) {
-                              return LastAnswer(calc.result,
-                                  onPressed: calc.addAns);
-                            },
+                          Expanded(
+                            child: Consumer<Calculations>(
+                              builder: (context, calc, child) {
+                                final answer = calc.result;
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    if (answer.isNotEmpty)
+                                      IconButton(
+                                        tooltip: 'Copy last answer',
+                                        icon: const Icon(Icons.copy, size: 18),
+                                        onPressed: () async {
+                                          await Clipboard.setData(
+                                              ClipboardData(text: answer));
+                                          if (!context.mounted) return;
+                                          ScaffoldMessenger.of(context)
+                                            ..hideCurrentSnackBar()
+                                            ..showSnackBar(const SnackBar(
+                                              content: Text('Answer copied'),
+                                            ));
+                                        },
+                                      ),
+                                    Flexible(
+                                      child: LastAnswer(answer,
+                                          onPressed: calc.addAns),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
                           ),
                           const SizedBox(width: 15),
                           CustomIcon(AppIcon.delete, onPressed: calc.delete),
