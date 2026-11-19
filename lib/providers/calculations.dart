@@ -39,15 +39,10 @@ class Calculations with ChangeNotifier {
   }
 
   String get fixedExp {
-    if ('('.allMatches(controller.text).length <=
-        ')'.allMatches(controller.text).length) {
-      return controller.text.replaceAll('e^', '2.7182^').replaceAll('π', 'PI');
-    } else {
-      return controller.text.replaceAll('e^', '2.7182^').replaceAll('π', 'PI') +
-          ')' *
-              ('('.allMatches(controller.text).length -
-                  ')'.allMatches(controller.text).length);
-    }
+    final expression = controller.text.replaceAll('π', 'PI');
+    final missingParens =
+        '('.allMatches(expression).length - ')'.allMatches(expression).length;
+    return missingParens > 0 ? expression + ')' * missingParens : expression;
   }
 
   List<List<String>> get lGrid {
