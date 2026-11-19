@@ -34,6 +34,7 @@ This lightweight calculator app offers a robust and versatile user experience wh
 
 ### 4. Usability Enhancements
 - **History Functionality**: Keeps a record of previous calculations for easy reference.
+- **Copy Last Answer**: After pressing `=`, use the copy button beside the last answer to copy it to the clipboard.
 - **Scrollable Input Field**: The input field is scrollable to manage longer expressions efficiently.
 - **Cursor Management**: Facilitates easy editing of expressions by allowing insertion and deletion at the cursor position.
 
